@@ -1,0 +1,26 @@
+# Development & Notebooks
+ipykernel
+jupyter
+notebook
+helper
+
+# LLM Integration
+openai
+anthropic
+mcp
+
+# Data
+duckdb
+
+# ETL
+numpy
+pandas
+matplotlib
+seaborn 
+altair
+
+# Agent Observability
+openinference-instrumentation-openai
+opentelemetry-api
+opentelemetry-sdk
+arize-phoenix-otel
