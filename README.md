@@ -1,6 +1,8 @@
 # EDD Agent Evals
 
-A three-part Python notebook series on Evaluation-Driven Development (EDD) for LLM agents. Build a multi-tool agent, instrument it with OpenTelemetry tracing via Arize Phoenix, then run LLM-as-judge and programmatic evaluations to identify and fix failure modes.
+Most LLM agents fail silently. A wrong tool is called, a hallucinated column slips into a SQL query, a chart specification comes back malformed, and the user still sees *some* answer back - just not the right one. Debugging by rerunning prompts and staring at print output does not scale.
+
+This three-notebook series teaches **Evaluation-Driven Development (EDD)** for LLM agents. You build a small multi-tool agent, instrument it with OpenTelemetry tracing via Arize Phoenix so its behavior becomes queryable data, then run LLM-as-judge and programmatic evaluations to identify failure modes and confirm that a targeted fix actually moved the score.
 
 ## Learning Objectives
 
@@ -61,8 +63,10 @@ pip install -r requirements.txt
 # Add your OpenAI API key to a .env file
 echo "OPENAI_API_KEY=your-key-here" > .env
 
-# Start Phoenix in a separate terminal before running notebooks 02 and 03
-python -m phoenix.server.main serve
+# Start Phoenix in a separate terminal before running notebooks 02 and 03.
+# The CLI entrypoint is preferred; the module form still works as a fallback.
+phoenix serve
+# Fallback: python -m phoenix.server.main serve
 
 # Run notebooks in order
 jupyter notebook
@@ -95,10 +99,12 @@ Open `01_evaluating_agents.ipynb` first. Notebooks 02 and 03 depend on Phoenix r
 ## Further Reading
 
 - OpenAI Function Calling guide
-- Arize Phoenix documentation
+- OpenAI Structured Outputs guide
+- Arize Phoenix Tracing documentation
+- OpenInference span-kinds reference (agent, chain, tool, LLM)
 - OpenTelemetry concepts: traces, spans, and context propagation
 - "Building LLM Applications" - general agent architecture patterns
-- LLM evaluation survey literature (arXiv: LLM-as-Judge methods)
+- LLM evaluation survey literature (LLM-as-Judge methods)
 
 ## Credits and Acknowledgements
 
