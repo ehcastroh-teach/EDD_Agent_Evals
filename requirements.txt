@@ -2,25 +2,25 @@
 ipykernel
 jupyter
 notebook
-helper
 
 # LLM Integration
 openai
-anthropic
-mcp
+python-dotenv
+pydantic
 
 # Data
 duckdb
+pyarrow
 
-# ETL
+# Data Manipulation and Visualization
 numpy
 pandas
 matplotlib
-seaborn 
-altair
 
 # Agent Observability
+arize-phoenix
+arize-phoenix-otel
 openinference-instrumentation-openai
 opentelemetry-api
 opentelemetry-sdk
-arize-phoenix-otel
+nest-asyncio
